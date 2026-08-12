@@ -3,11 +3,15 @@
 
 A simple service that creates PDF reports from HTML templates in the background so your API stays fast and responsive.
 
+---
+
 ## Features
 - **Fast Responses**: Requests run in the background without blocking the API.
 - **HTML & CSS Templates**: Style reports using standard HTML and Jinja2 templates.
 - **Job Tracking**: Monitor report status (`pending`, `completed`, `failed`) anytime.
 - **Pure Python**: Uses `xhtml2pdf` for easy setup without native C++ dependencies.
+
+---
 
 ## Instructions
 
@@ -41,6 +45,8 @@ uvicorn main:app --reload
 
 
 5. Open `http://127.0.0.1:8000/docs` in your browser to access the API documentation.
+
+---
 
 ## How to Use
 
