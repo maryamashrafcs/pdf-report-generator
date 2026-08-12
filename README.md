@@ -1,55 +1,50 @@
-```markdown
-# Async PDF Report Generator
+<h1>Async PDF Report Generator</h1>
 
-A simple service that creates PDF reports from HTML templates in the background so your API stays fast and responsive.
+<p>A simple service that creates PDF reports from HTML templates in the background so your API stays fast and responsive.</p>
 
----
+<hr>
 
-## Features
-- **Fast Responses**: Requests run in the background without blocking the API.
-- **HTML & CSS Templates**: Style reports using standard HTML and Jinja2 templates.
-- **Job Tracking**: Monitor report status (`pending`, `completed`, `failed`) anytime.
-- **Pure Python**: Uses `xhtml2pdf` for easy setup without native C++ dependencies.
+<h2>Features</h2>
 
----
+<ul>
+  <li><b>Fast Responses</b>: Requests run in the background without blocking the API.</li>
+  <li><b>HTML & CSS Templates</b>: Style reports using standard HTML and Jinja2 templates.</li>
+  <li><b>Job Tracking</b>: Monitor report status (<code>pending</code>, <code>completed</code>, <code>failed</code>) anytime.</li>
+  <li><b>Pure Python</b>: Uses <code>xhtml2pdf</code> for easy setup without native C++ dependencies.</li>
+</ul>
 
-## Instructions
+<hr>
 
-1. **Clone the project:**
-   ```powershell
-   git clone <YOUR_GITHUB_REPOSITORY_URL>
-   cd pdf-report-generator
+<h2>Instructions</h2>
 
-```
+<ol>
+  <li>
+    <b>Clone the project:</b>
+<pre><code>git clone https://github.com/maryamashrafcs/pdf-report-generator.git
+cd pdf-report-generator</code></pre>
+  </li>
+  <li>
+    <b>Set up and activate virtual environment:</b>
+<pre><code>python -m venv venv
+.\venv\Scripts\Activate.ps1</code></pre>
+  </li>
+  <li>
+    <b>Install dependencies:</b>
+<pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>
+    <b>Start the application:</b>
+<pre><code>uvicorn main:app --reload</code></pre>
+  </li>
+  <li>Open <code>http://127.0.0.1:8000/docs</code> in your browser to access the API documentation.</li>
+</ol>
 
-2. **Set up and activate virtual environment:**
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
+<hr>
 
-```
+<h2>How to Use</h2>
 
-
-3. **Install dependencies:**
-```powershell
-pip install -r requirements.txt
-
-```
-
-
-4. **Start the application:**
-```powershell
-uvicorn main:app --reload
-
-```
-
-
-5. Open `http://127.0.0.1:8000/docs` in your browser to access the API documentation.
-
----
-
-## How to Use
-
-1. **Create a Report**: Send a `POST` request to `/api/reports` with a `user_id`. Copy the returned `report_id`.
-2. **Check Status**: Send a `GET` request to `/api/reports/{report_id}` until status is `completed`.
-3. **Download PDF**: Send a `GET` request to `/api/reports/{report_id}/download` to save your file.
+<ol>
+  <li><b>Create a Report</b>: Send a <code>POST</code> request to <code>/api/reports</code> with a <code>user_id</code>. Copy the returned <code>report_id</code>.</li>
+  <li><b>Check Status</b>: Send a <code>GET</code> request to <code>/api/reports/{report_id}</code> until status is <code>completed</code>.</li>
+  <li><b>Download PDF</b>: Send a <code>GET</code> request to <code>/api/reports/{report_id}/download</code> to save your file.</li>
+</ol>
